@@ -1,0 +1,40 @@
+import type { Metadata } from "next";
+import { Instrument_Sans, Instrument_Serif } from "next/font/google";
+import "./globals.css";
+import { SmoothScroll } from "@/components/layout/SmoothScroll";
+
+const instrumentSans = Instrument_Sans({
+  variable: "--font-instrument-sans",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-instrument-serif",
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+export const metadata: Metadata = {
+  title: "Brick2Wall Infra | Value Engineers for India's Infrastructure",
+  description: "India's most premium B2B infrastructure materials platform.",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en" className="dark scroll-smooth">
+      <body
+        className={`${instrumentSans.variable} ${instrumentSerif.variable} font-sans antialiased`}
+      >
+        <SmoothScroll>
+          {children}
+        </SmoothScroll>
+      </body>
+    </html>
+  );
+}
