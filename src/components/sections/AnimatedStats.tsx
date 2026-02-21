@@ -30,12 +30,14 @@ function Counter({ from = 0, to, duration = 2, suffix = "", prefix = "" }: { fro
 }
 
 const STATS = [
-    { value: 500, suffix: "K+", label: "Orders Fulfilled" },
-    { value: 2, suffix: "M+", label: "SMEs Empowered" },
-    { value: 26, suffix: "", prefix: "", label: "States" },
-    { value: 7, suffix: "", label: "Union Territories" },
-    { value: 1, suffix: " Lac Cr+", label: "Order Book" },
-    { value: 15, suffix: "%+", label: "Material Savings" },
+    { value: 125, suffix: "+", label: "Clients Served" },
+    { value: 1, suffix: "L+", label: "Cr Order Book" },
+    { value: 15, suffix: "+", label: "Mill Partners" },
+    { value: 500, suffix: "+", label: "Cr Credit Book" },
+    { value: 180, suffix: "+", label: "Projects Executed" },
+    { value: 20, suffix: "+", label: "Indian States" },
+    { value: 15, suffix: "%", prefix: "Upto ", label: "Saved Procurement Costs" },
+    { value: 8, suffix: "%", prefix: "6-", label: "Finance Cost Drops" },
 ];
 
 export function AnimatedStats() {
@@ -57,7 +59,7 @@ export function AnimatedStats() {
                     </motion.h2>
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 md:gap-4 divide-y md:divide-y-0 md:divide-x divide-white/10">
+                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-8 md:gap-12 divide-x divide-y md:divide-y-0 divide-white/10 p-4 md:p-0">
                     {STATS.map((stat, i) => (
                         <motion.div
                             key={i}

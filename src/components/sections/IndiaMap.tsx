@@ -16,6 +16,8 @@ const CITIES = [
     { name: "Jaipur", top: "35%", left: "35%" },
 ];
 
+import mapData from "@/data/maps.json";
+
 export function IndiaMap() {
     return (
         <section className="py-24 md:py-32 relative bg-[#050507] overflow-hidden">
@@ -50,67 +52,49 @@ export function IndiaMap() {
                     </motion.p>
                 </div>
 
-                <div className="relative max-w-4xl mx-auto aspect-square md:aspect-video mt-12">
-                    {/* Abstract Map Background */}
-                    <div className="absolute inset-0 bg-white/5 border border-white/10 rounded-3xl glass-card overflow-hidden">
-                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.1)_0%,transparent_70%)]"></div>
+                <div className="relative w-full max-w-2xl mx-auto aspect-[500/550] mt-12 bg-[#050507]">
+                    {/* Abstract Container Background */}
+                    <div className="absolute inset-0 bg-white/[0.02] border border-white/5 rounded-[40px] glass-card overflow-hidden">
+                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.05)_0%,transparent_70%)] pointer-events-none"></div>
 
-                        {/* Grid Pattern */}
-                        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:2rem_2rem]"></div>
+                        {/* High Quality India SVG */}
+                        <svg viewBox="0 0 500 550" preserveAspectRatio="none" className="absolute inset-0 w-full h-full pointer-events-none drop-shadow-[0_0_15px_rgba(212,175,55,0.15)]">
+                            <motion.path
+                                d={mapData.india.path}
+                                fill="#0F0F12"
+                                stroke="#D4AF37"
+                                strokeWidth="2"
+                                strokeLinejoin="round"
+                                strokeLinecap="round"
+                                initial={{ opacity: 0 }}
+                                whileInView={{ opacity: 1 }}
+                                viewport={{ once: true, margin: "-100px" }}
+                                transition={{ duration: 1.5, ease: "easeInOut" }}
+                            />
+                        </svg>
 
-                        {/* Simulated Nodes / Map Points */}
-                        {CITIES.map((city, i) => (
+                        {/* Highly Accurate Pins */}
+                        {mapData.india.pins.map((city, i) => (
                             <motion.div
                                 key={city.name}
-                                className="absolute flex flex-col items-center"
-                                style={{ top: city.top, left: city.left }}
+                                className="absolute flex flex-col items-center group cursor-pointer z-10"
+                                style={{ top: `${city.y}%`, left: `${city.x}%` }}
                                 initial={{ opacity: 0, scale: 0 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: 0.3 + i * 0.1, type: "spring" }}
+                                transition={{ delay: 1 + i * 0.1, type: "spring" }}
                             >
                                 <div className="relative flex justify-center items-center">
-                                    <span className="animate-ping absolute inline-flex h-8 w-8 rounded-full bg-primary opacity-30"></span>
-                                    <div className="relative size-3 bg-primary rounded-full shadow-[0_0_15px_rgba(212,175,55,1)] border-2 border-[#050507]"></div>
+                                    <span className="animate-ping absolute inline-flex h-10 w-10 rounded-full bg-primary/40 group-hover:bg-primary/60 transition-colors"></span>
+                                    <div className="relative size-3.5 bg-primary rounded-full shadow-[0_0_15px_rgba(212,175,55,1)] border-[3px] border-[#0A0A0F] group-hover:scale-150 transition-transform duration-300"></div>
                                 </div>
-                                <span className="absolute top-4 text-[10px] sm:text-xs font-bold text-white/70 whitespace-nowrap bg-[#0A0A0F]/80 px-2 py-0.5 rounded backdrop-blur border border-white/10 mt-1">
-                                    {city.name}
-                                </span>
+                                <div className="absolute top-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                                    <span className="text-xs font-bold text-white whitespace-nowrap bg-[#12121A]/90 px-3 py-1.5 rounded-lg backdrop-blur-md border border-white/20 shadow-xl">
+                                        {city.name}
+                                    </span>
+                                </div>
                             </motion.div>
                         ))}
-
-                        {/* Connections (Abstract SVG lines) */}
-                        <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ filter: 'drop-shadow(0 0 8px rgba(212,175,55,0.4))' }}>
-                            <motion.path
-                                d="M 45% 25% Q 35% 42% 30% 60% T 40% 80%"
-                                fill="none"
-                                stroke="url(#grad1)"
-                                strokeWidth="1.5"
-                                strokeDasharray="4 4"
-                                initial={{ pathLength: 0, opacity: 0 }}
-                                whileInView={{ pathLength: 1, opacity: 0.5 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 2, ease: "easeInOut", delay: 1 }}
-                            />
-                            <motion.path
-                                d="M 45% 25% Q 55% 37% 70% 50% T 48% 85%"
-                                fill="none"
-                                stroke="url(#grad1)"
-                                strokeWidth="1.5"
-                                strokeDasharray="4 4"
-                                initial={{ pathLength: 0, opacity: 0 }}
-                                whileInView={{ pathLength: 1, opacity: 0.5 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 2, ease: "easeInOut", delay: 1.5 }}
-                            />
-                            <defs>
-                                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" stopColor="#D4AF37" stopOpacity="1" />
-                                    <stop offset="100%" stopColor="#D4AF37" stopOpacity="0.1" />
-                                </linearGradient>
-                            </defs>
-                        </svg>
-
                     </div>
 
                     {/* Floating Data Card */}

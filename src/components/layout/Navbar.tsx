@@ -8,6 +8,17 @@ import { MagneticButton } from "@/components/ui/magnetic-button";
 import { Menu } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
+// Import removed
+
+const NAV_LINKS = [
+    { name: "About", href: "/about" },
+    { name: "Products", href: "/#products" },
+    { name: "International", href: "/#international" },
+    { name: "Tenders", href: "/#tenders" },
+    { name: "Project Finance", href: "/#project-finance" },
+    { name: "Mills", href: "/#mills" }
+];
+
 export function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -43,13 +54,13 @@ export function Navbar() {
                         <LivePriceTicker />
 
                         <div className="flex items-center gap-6 text-sm font-medium text-white/80">
-                            {["Products", "Tenders", "Project Finance", "Mills"].map((item) => (
+                            {NAV_LINKS.map((item) => (
                                 <Link
-                                    key={item}
-                                    href={`#${item.toLowerCase().replace(" ", "-")}`}
+                                    key={item.name}
+                                    href={item.href}
                                     className="hover:text-primary transition-colors hover:scale-105 transform duration-200"
                                 >
-                                    {item}
+                                    {item.name}
                                 </Link>
                             ))}
                         </div>
@@ -87,19 +98,19 @@ export function Navbar() {
                         <div className="flex justify-center mb-4">
                             <LivePriceTicker />
                         </div>
-                        {["Products", "Tenders", "Project Finance", "Mills"].map((item, i) => (
+                        {NAV_LINKS.map((item, i) => (
                             <motion.div
                                 initial={{ opacity: 0, x: -20 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ delay: i * 0.1 }}
-                                key={item}
+                                key={item.name}
                             >
                                 <Link
-                                    href={`#${item.toLowerCase().replace(" ", "-")}`}
+                                    href={item.href}
                                     className="text-3xl font-serif text-white hover:text-primary transition-colors border-b border-white/10 pb-4 block"
                                     onClick={() => setMobileMenuOpen(false)}
                                 >
-                                    {item}
+                                    {item.name}
                                 </Link>
                             </motion.div>
                         ))}

@@ -70,13 +70,12 @@ export function DifferentiationMatrix() {
                         </div>
                     </div>
 
-                    {/* Matrix Rows */}
+                    {/* Authentic Matrix Rows */}
                     {[
-                        { tag: "Pricing Model", desc: "Transparent Cost-Plus with zero hidden margins.", b2w: true, trad: "Opaque Markups" },
-                        { tag: "Material Traceability", desc: "Digital MTC matching delivery instantly.", b2w: true, trad: "Manual/Delayed" },
-                        { tag: "Project Finance", desc: "6-8% vs 18% market rate without collateral.", b2w: true, trad: false },
-                        { tag: "Tender Intelligence", desc: "AI-matched Govt. Tenders directly linked to supply.", b2w: true, trad: false },
-                        { tag: "Fulfillment SLA", desc: "Guaranteed 48hr dispatch pan-India.", b2w: true, trad: "Unpredictable" },
+                        { tag: "Procurement Costs", desc: "We optimize cost by focusing holistically on continuous volume alongside price.", b2w: true, trad: "Price-Only Focus" },
+                        { tag: "Supply Confidence", desc: "Providing secondary manufacturers with an absolute seal of confidence.", b2w: true, trad: "Opaque Sourcing" },
+                        { tag: "Asset Visibility", desc: "Helping manufacturers showcase world-class production facilities and raw material superiority.", b2w: true, trad: false },
+                        { tag: "Product Readiness", desc: "Providing customized, ready-to-use products tailored to exact site schematics.", b2w: true, trad: false },
                     ].map((row, i) => (
                         <motion.div key={i} variants={rowVariants} className="grid grid-cols-3 md:grid-cols-4 gap-4 p-4 md:px-6 border-b border-white/5 items-center relative group hover:bg-[#12121A] transition-colors rounded-xl">
                             <div className="col-span-1 md:col-span-2 flex flex-col justify-center">
@@ -104,6 +103,24 @@ export function DifferentiationMatrix() {
                             </div>
                         </motion.div>
                     ))}
+
+                    {/* Authentic Impact Metrics */}
+                    <motion.div
+                        variants={rowVariants}
+                        className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4"
+                    >
+                        {[
+                            { val: "15%", label: "Cost Reduction" },
+                            { val: "1.5X", label: "Asset Utilization" },
+                            { val: "5X", label: "FI Credit Lines" },
+                            { val: "1.5X", label: "Fleet Utilization" },
+                        ].map((metric, i) => (
+                            <div key={i} className="glass-card p-6 rounded-xl border border-white/10 flex flex-col items-center text-center">
+                                <span className="text-3xl font-serif text-primary mb-2 gold-gradient bg-clip-text text-transparent">{metric.val}</span>
+                                <span className="text-white/60 text-xs uppercase tracking-wider leading-relaxed">{metric.label}</span>
+                            </div>
+                        ))}
+                    </motion.div>
 
                 </motion.div>
             </div>

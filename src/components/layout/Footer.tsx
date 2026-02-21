@@ -99,16 +99,26 @@ export function Footer() {
                         <div className="flex flex-col gap-4">
                             <h4 className="text-white font-bold tracking-wider text-sm uppercase mb-2">Connect</h4>
                             <div className="flex items-start gap-3 mt-1 text-white/50 text-sm">
-                                <MapPin className="size-5 shrink-0 text-primary" />
-                                <span>Sector 44, Gurugram, <br /> Haryana 122003, India</span>
+                                <MapPin className="size-5 shrink-0 text-primary mt-0.5" />
+                                <span><strong>Gurgaon HQ:</strong> Brick2Wall, 5th Floor, 448 -<br />451 Rao Gajraj Singh Marg,<br />Udyog Vihar Phase V Rd, Gurugram, Haryana 122016</span>
                             </div>
-                            <div className="flex items-center gap-3 text-white/50 text-sm mt-2">
-                                <Phone className="size-4 shrink-0 text-primary" />
-                                <span>+91 1800-B2W-STEEL</span>
+                            <div className="flex items-start gap-3 mt-2 text-white/50 text-sm">
+                                <MapPin className="size-5 shrink-0 text-primary mt-0.5" />
+                                <span><strong>Chennai:</strong> WeWork Olympia Cyberspace<br />No 21/22, Alandur Road, Arulayiammanpet,<br />2nd Street, Guindy, Chennai 600032</span>
                             </div>
-                            <div className="flex items-center gap-3 text-white/50 text-sm mt-2">
-                                <Mail className="size-4 shrink-0 text-primary" />
-                                <span>quotes@brick2wall.infra</span>
+                            <div className="flex items-start gap-3 mt-2 text-white/50 text-sm">
+                                <MapPin className="size-5 shrink-0 text-primary mt-0.5" />
+                                <span><strong>Singapore HQ:</strong> 60 Paya Lebar Road<br />#09-43 Paya Lebar Square, SG 409051</span>
+                            </div>
+                            <div className="flex flex-col gap-2 mt-2 pt-4 border-t border-white/10">
+                                <div className="flex items-center gap-3 text-white/50 text-sm">
+                                    <Phone className="size-4 shrink-0 text-primary" />
+                                    <span>+91 124-4544227</span>
+                                </div>
+                                <div className="flex items-center gap-3 text-white/50 text-sm">
+                                    <Mail className="size-4 shrink-0 text-primary" />
+                                    <span>helpdesk@brick2wall.com</span>
+                                </div>
                             </div>
                         </div>
                     </div>
