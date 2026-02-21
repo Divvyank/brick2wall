@@ -105,7 +105,8 @@ export function TenderIntelligence() {
 
                         <motion.div style={{ y: y1 }} className="absolute left-0 md:left-[10%] top-0 z-10 w-full md:w-[85%]">
                             <TiltCard>
-                                <Card className="p-6 md:p-8 bg-[#12121A]/90 border-white/10 shadow-2xl backdrop-blur-md">
+                                {/* Added transform-gpu to fix Chromium Windows backdrop-blur rendering corruption */}
+                                <Card className="relative transform-gpu p-6 md:p-8 bg-[#12121A]/90 border-white/10 shadow-2xl backdrop-blur-md">
                                     <div className="flex justify-between items-start mb-6">
                                         <span className="bg-green-500/20 text-green-400 text-xs font-bold px-3 py-1 rounded-full border border-green-500/30">
                                             {TENDERS[0].match}% AI Match
@@ -151,7 +152,8 @@ export function TenderIntelligence() {
                         </motion.div>
 
                         <motion.div style={{ y: y2 }} className="absolute right-0 md:right-[5%] top-[150px] z-0 w-full md:w-[80%] opacity-60 scale-95 blur-[1px]">
-                            <Card className="p-6 md:p-8 bg-[#12121A]/80 border-white/5 shadow-xl pointer-events-none">
+                            {/* Added transform-gpu to fix Chromium Windows backdrop-blur rendering corruption */}
+                            <Card className="relative transform-gpu p-6 md:p-8 bg-[#12121A]/80 border-white/5 shadow-xl pointer-events-none">
                                 <div className="flex justify-between items-start mb-6">
                                     <span className="bg-green-500/20 text-green-400 text-xs font-bold px-3 py-1 rounded-full border border-green-500/30">
                                         {TENDERS[1].match}% AI Match

@@ -41,7 +41,7 @@ export function TiltCard({
             initial={{ rotateX: 0, rotateY: 0 }}
             animate={{ rotateX, rotateY }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            className={`relative [transform-style:preserve-3d] ${className}`}
+            className={`relative ${className}`}
         >
             <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500 rounded-xl" />
             {children}
