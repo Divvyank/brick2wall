@@ -16,18 +16,17 @@ const containerVariants = {
 };
 
 const stateVariants: any = {
-    hidden: { fill: "#0F0F12", stroke: "rgba(212, 175, 55, 0.2)" },
+    hidden: { opacity: 0 },
     visible: {
-        fill: "url(#goldAmberGradient)",
-        stroke: "rgba(212, 175, 55, 0.8)",
+        opacity: 1,
         transition: { duration: 0.8, ease: "easeInOut" }
     }
 };
 
 const pulseVariants: any = {
-    hidden: { opacity: 0.8 },
+    hidden: { opacity: 0.1 },
     visible: {
-        opacity: [0.8, 1, 0.8],
+        opacity: [0.1, 0.8, 0.1],
         transition: {
             duration: 2.5,
             repeat: Infinity,
@@ -66,15 +65,27 @@ export function AnimatedIndiaStatesMap() {
                         viewport={{ once: true, margin: "-100px" }}
                     >
                         {statesData.states.map((state) => (
-                            <motion.path
-                                key={state.id}
-                                d={state.path}
-                                variants={stateVariants}
-                                strokeWidth="0.6"
-                                strokeLinejoin="round"
-                                strokeLinecap="round"
-                                style={{ transformOrigin: "center" }}
-                            />
+                            <g key={state.id} style={{ transformOrigin: "center" }}>
+                                {/* Base Dark Path */}
+                                <path
+                                    d={state.path}
+                                    fill="#0F0F12"
+                                    stroke="rgba(212, 175, 55, 0.2)"
+                                    strokeWidth="0.6"
+                                    strokeLinejoin="round"
+                                    strokeLinecap="round"
+                                />
+                                {/* Staggered Golden Glowing Path Overlay */}
+                                <motion.path
+                                    d={state.path}
+                                    fill="url(#goldAmberGradient)"
+                                    stroke="rgba(212, 175, 55, 0.8)"
+                                    strokeWidth="0.6"
+                                    strokeLinejoin="round"
+                                    strokeLinecap="round"
+                                    variants={stateVariants}
+                                />
+                            </g>
                         ))}
                     </motion.g>
 

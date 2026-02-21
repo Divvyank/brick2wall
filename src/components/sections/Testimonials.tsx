@@ -31,7 +31,7 @@ const TESTIMONIALS = [
 export function Testimonials() {
     return (
         <section className="py-24 md:py-32 bg-[#050507] relative overflow-hidden">
-            <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[150px] mix-blend-screen opacity-30 pointer-events-none"></div>
+            <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[150px] opacity-30 pointer-events-none transform-gpu"></div>
 
             <div className="container mx-auto px-4 md:px-6 lg:px-8">
                 <div className="text-center mb-16">

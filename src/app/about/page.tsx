@@ -101,6 +101,7 @@ export default function AboutPage() {
                                                 src={leader.src}
                                                 alt={leader.name}
                                                 fill
+                                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 20vw"
                                                 className="object-cover object-top filter grayscale opacity-80 group-hover/card:grayscale-0 group-hover/card:opacity-100 transition-all duration-700"
                                             />
                                         </div>
@@ -132,6 +133,7 @@ export default function AboutPage() {
                                                 src={advisor.src}
                                                 alt={advisor.name}
                                                 fill
+                                                sizes="(max-width: 768px) 100vw, 280px"
                                                 className="object-cover object-top filter grayscale opacity-80 group-hover/card:grayscale-0 group-hover/card:opacity-100 transition-all duration-700"
                                             />
                                         </div>

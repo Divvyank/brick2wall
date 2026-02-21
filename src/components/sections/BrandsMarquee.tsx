@@ -41,7 +41,8 @@ export function BrandsMarquee() {
                         ease: "linear",
                         duration: 45,
                     }}
-                    className="flex gap-8 md:gap-12 whitespace-nowrap min-w-max items-center py-8"
+                    style={{ willChange: "transform" }}
+                    className="flex gap-8 md:gap-12 whitespace-nowrap min-w-max items-center py-8 transform-gpu"
                 >
                     {/* Duplicate the array 3 times for seamless ultra-wide infinite scroll */}
                     {[...BRANDS, ...BRANDS, ...BRANDS].map((brand, i) => (
@@ -49,13 +50,14 @@ export function BrandsMarquee() {
                             key={i}
                             className="flex flex-col items-center gap-5 group/card cursor-pointer"
                         >
-                            <div className="flex items-center justify-center w-48 md:w-64 h-[90px] rounded-[1.5rem] md:rounded-3xl glass-card border border-white/10 bg-[#0A0A0F]/40 backdrop-blur-xl transition-all duration-700 ease-out group-hover/card:-translate-y-2 group-hover/card:scale-[1.06] group-hover/card:bg-[#12121A]/80 group-hover/card:shadow-[0_20px_40px_rgba(212,175,55,0.15),_inset_0_0_0_1px_rgba(212,175,55,0.4)] px-6">
+                            <div className="flex items-center justify-center w-48 md:w-64 h-[90px] rounded-[1.5rem] md:rounded-3xl border border-white/10 bg-[#0A0A0F]/80 transition-all duration-700 ease-out transform-gpu group-hover/card:-translate-y-2 group-hover/card:scale-[1.06] group-hover/card:bg-[#12121A] group-hover/card:shadow-[0_20px_40px_rgba(212,175,55,0.15),_inset_0_0_0_1px_rgba(212,175,55,0.4)] px-6">
                                 <div className="relative w-full h-[50px] md:h-[62px]">
                                     <Image
                                         src={brand.src}
                                         alt={brand.name}
                                         fill
-                                        className="object-contain filter grayscale opacity-70 transition-all duration-700 ease-out group-hover/card:grayscale-0 group-hover/card:opacity-100 group-hover/card:drop-shadow-[0_0_15px_rgba(212,175,55,0.4)]"
+                                        sizes="200px"
+                                        className="object-contain filter grayscale opacity-70 transition-all duration-700 ease-out transform-gpu group-hover/card:grayscale-0 group-hover/card:opacity-100 group-hover/card:drop-shadow-[0_0_15px_rgba(212,175,55,0.4)]"
                                     />
                                 </div>
                             </div>

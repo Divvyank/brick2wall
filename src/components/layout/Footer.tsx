@@ -13,7 +13,7 @@ export function Footer() {
 
                 <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
                     <div className="bg-[#12121A]/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-16 flex flex-col md:flex-row items-center justify-between gap-12 shadow-2xl relative overflow-hidden">
-                        <div className="absolute -top-40 -right-40 w-[500px] h-[500px] bg-primary/20 blur-[100px] rounded-full pointer-events-none mix-blend-screen"></div>
+                        <div className="absolute -top-40 -right-40 w-[500px] h-[500px] bg-primary/20 blur-[100px] rounded-full pointer-events-none transform-gpu"></div>
 
                         <div className="flex-1 max-w-2xl relative z-10">
                             <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-white tracking-[-0.04em] mb-6 leading-[1.1]">

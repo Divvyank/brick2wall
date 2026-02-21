@@ -36,7 +36,7 @@ export function International() {
         <section id="international" className="pt-32 pb-24 bg-[#020202] relative overflow-hidden border-t border-white/10">
             {/* Background Metallic Texture Simulation */}
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,#1a1a24_0%,#020202_70%)] pointer-events-none"></div>
-            <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[150px] mix-blend-screen -z-10 pointer-events-none"></div>
+            <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[150px] -z-10 pointer-events-none transform-gpu"></div>
 
             <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
 
@@ -116,7 +116,7 @@ export function International() {
                     {/* Ferrous */}
                     <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
                         <div className="glass-card rounded-3xl border border-white/10 p-8 md:p-12 h-full relative overflow-hidden group">
-                            <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-primary/10 blur-[100px] mix-blend-screen opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none"></div>
+                            <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-primary/10 blur-[100px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none transform-gpu"></div>
                             <h3 className="text-3xl font-serif text-white mb-8 border-b border-white/10 pb-4">Ferrous Scrap</h3>
                             <div className="flex flex-wrap gap-2 md:gap-3">
                                 {FERROUS.map((item) => (
@@ -131,7 +131,7 @@ export function International() {
                     {/* Non-Ferrous */}
                     <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ delay: 0.2 }}>
                         <div className="glass-card rounded-3xl border border-white/10 p-8 md:p-12 h-full relative overflow-hidden group">
-                            <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-secondary/10 blur-[100px] mix-blend-screen opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none"></div>
+                            <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-secondary/10 blur-[100px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none transform-gpu"></div>
                             <h3 className="text-3xl font-serif text-white mb-8 border-b border-white/10 pb-4">Non-Ferrous Scrap</h3>
                             <div className="flex flex-wrap gap-2 md:gap-3">
                                 {NON_FERROUS.map((item) => (

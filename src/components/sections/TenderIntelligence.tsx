@@ -51,7 +51,7 @@ export function TenderIntelligence() {
     return (
         <section ref={containerRef} id="tenders" className="py-24 md:py-32 relative overflow-hidden bg-[#0A0A0F]">
             {/* Background Decor */}
-            <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-secondary/10 rounded-full blur-[120px] mix-blend-screen opacity-30"></div>
+            <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-secondary/10 rounded-full blur-[120px] opacity-30 transform-gpu pointer-events-none"></div>
 
             <div className="container mx-auto px-4 md:px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-16 lg:gap-8 items-center">

@@ -41,7 +41,7 @@ export function WhomDoWeServe() {
                         >
                             <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-white tracking-[-0.04em] mb-6">
                                 Focus on the <br />
-                                <span className="text-primary italic gold-gradient drop-shadow-[0_0_20px_rgba(212,175,55,0.3)]">$100Bn+</span> Sector
+                                <span className="text-primary italic gold-gradient drop-shadow-[0_0_20px_rgba(212,175,55,0.3)]" suppressHydrationWarning>$100Bn+</span> Sector
                             </h2>
                             <p className="text-lg md:text-xl text-white/70 font-sans leading-relaxed">
                                 Brick2Wall Infra exclusively focuses on the massive Indian Infrastructure sector. With variable participation from Large, Medium, and Small enterprises across the country, we have developed unparalleled intelligence to precisely ascertain consumption and procurement requirements.
@@ -55,7 +55,7 @@ export function WhomDoWeServe() {
                             transition={{ delay: 0.2 }}
                             className="p-6 md:p-8 rounded-2xl bg-primary/5 border border-primary/20 backdrop-blur-sm relative overflow-hidden group"
                         >
-                            <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-[50px] group-hover:bg-primary/20 transition-colors duration-700"></div>
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-[50px] group-hover:bg-primary/20 transition-colors duration-700 transform-gpu pointer-events-none"></div>
                             <p className="text-white/90 font-medium text-lg leading-relaxed relative z-10">
                                 &ldquo;By decoding complex project lifecycles, we predict material demand with absolute accuracy, enabling just-in-time delivery and crushing holding costs.&rdquo;
                             </p>

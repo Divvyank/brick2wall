@@ -27,9 +27,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark scroll-smooth">
+    <html lang="en" className="dark scroll-smooth" data-scroll-behavior="smooth">
       <body
-        className={`${instrumentSans.variable} ${instrumentSerif.variable} font-sans antialiased`}
+        className={`${instrumentSans.variable} ${instrumentSerif.variable} font-sans antialiased relative w-full`}
       >
         <SmoothScroll>
           {children}

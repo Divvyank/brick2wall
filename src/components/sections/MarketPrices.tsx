@@ -80,7 +80,7 @@ export function MarketPrices() {
                         <motion.div key={item.id} variants={cardVariants}>
                             <TiltCard>
                                 <Card className="h-full border-white/5 overflow-hidden group hover:border-primary/30 transition-colors duration-500">
-                                    <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-[50px] -mr-10 -mt-10 group-hover:bg-primary/20 transition-all duration-700"></div>
+                                    <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-[50px] -mr-10 -mt-10 group-hover:bg-primary/20 transition-colors duration-700 transform-gpu pointer-events-none"></div>
                                     <CardHeader className="pb-2">
                                         <CardTitle className="text-white/60 text-sm font-medium uppercase tracking-wider">
                                             {item.brand}

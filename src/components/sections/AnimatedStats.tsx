@@ -1,32 +1,29 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { animate, motion, useInView, useIsomorphicLayoutEffect, useMotionValue } from "framer-motion";
+import { useRef } from "react";
 
-function Counter({ from = 0, to, duration = 2, suffix = "", prefix = "" }: { from?: number, to: number, duration?: number, suffix?: string, prefix?: string }) {
-    const nodeRef = useRef<HTMLSpanElement>(null);
-    const inView = useInView(nodeRef, { once: true, margin: "-50px" });
-    const [count, setCount] = useState(from);
+function Counter({ from = 0, to, duration = 2.5, suffix = "", prefix = "" }: { from?: number, to: number, duration?: number, suffix?: string, prefix?: string }) {
+    const ref = useRef<HTMLSpanElement>(null);
+    const inView = useInView(ref, { once: true, margin: "-50px" });
+    const count = useMotionValue(from);
 
-    useEffect(() => {
-        if (!inView) return;
+    useIsomorphicLayoutEffect(() => {
+        if (inView) {
+            const controls = animate(count, to, {
+                duration: duration,
+                ease: "easeOut",
+                onUpdate(value) {
+                    if (ref.current) {
+                        ref.current.textContent = `${prefix}${Math.floor(value)}${suffix}`;
+                    }
+                }
+            });
+            return controls.stop;
+        }
+    }, [count, inView, to, duration, prefix, suffix]);
 
-        let startTimestamp: number;
-        const step = (timestamp: number) => {
-            if (!startTimestamp) startTimestamp = timestamp;
-            const progress = Math.min((timestamp - startTimestamp) / (duration * 1000), 1);
-            // easeOutExpo
-            const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
-            setCount(Math.floor(easeProgress * (to - from) + from));
-
-            if (progress < 1) {
-                window.requestAnimationFrame(step);
-            }
-        };
-        window.requestAnimationFrame(step);
-    }, [inView, from, to, duration]);
-
-    return <span ref={nodeRef}>{prefix}{count}{suffix}</span>;
+    return <span ref={ref}>{prefix}{from}{suffix}</span>;
 }
 
 const STATS = [

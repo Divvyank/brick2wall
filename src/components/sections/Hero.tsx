@@ -41,13 +41,15 @@ export function Hero() {
             className="relative h-screen min-h-[800px] w-full flex items-center justify-center overflow-hidden bg-background"
         >
             {/* Background Parallax Layer */}
-            <motion.div style={{ y, scale }} className="absolute inset-0 z-0">
-                <div className="absolute inset-0 bg-grain z-10 mix-blend-overlay"></div>
-                {/* Deep gradient simulating industrial luxury */}
+            <motion.div style={{ y, scale }} className="absolute inset-0 z-0 transform-gpu will-change-transform isolate">
+                {/* Deep gradient simulating industrial luxury MUST be at the bottom for isolation to work */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[#050507] via-[#0a0a10] to-[#1a1a24]"></div>
+
+                <div className="absolute inset-0 bg-grain z-10 mix-blend-overlay opacity-30"></div>
+
                 {/* Glow Effects */}
-                <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] mix-blend-screen mix-blend-plus-lighter opacity-50 animate-pulse-slow"></div>
-                <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-secondary/30 rounded-full blur-[150px] mix-blend-screen opacity-50"></div>
+                <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] mix-blend-plus-lighter opacity-50"></div>
+                <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-secondary/30 rounded-full blur-[150px] opacity-50"></div>
             </motion.div>
 
             {/* Grid Overlay */}

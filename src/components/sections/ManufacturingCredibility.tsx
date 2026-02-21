@@ -22,7 +22,7 @@ export function ManufacturingCredibility() {
 
     return (
         <section ref={containerRef} className="py-24 md:py-32 relative overflow-hidden bg-[#0A0A0F]">
-            <div className="absolute top-1/2 left-0 w-full h-[500px] bg-primary/5 -translate-y-1/2 rounded-full blur-[120px] mix-blend-screen opacity-50 pointer-events-none"></div>
+            <div className="absolute top-1/2 left-0 w-full h-[500px] bg-primary/5 -translate-y-1/2 rounded-full blur-[120px] opacity-50 pointer-events-none transform-gpu"></div>
 
             <div className="container mx-auto px-4 md:px-6 lg:px-8">
                 <div className="flex flex-col lg:flex-row gap-16 items-center">

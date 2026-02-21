@@ -63,7 +63,7 @@ export function Stakeholders() {
     return (
         <section ref={containerRef} className="py-24 md:py-32 bg-[#020202] relative overflow-hidden border-t border-white/5">
             {/* Background Glows */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-lg h-[400px] bg-primary/10 blur-[120px] rounded-full pointer-events-none mix-blend-screen"></div>
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-lg h-[400px] bg-primary/10 blur-[120px] rounded-full pointer-events-none transform-gpu"></div>
 
             <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
                 <div className="text-center mb-16 md:mb-20 max-w-3xl mx-auto">

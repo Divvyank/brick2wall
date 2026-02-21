@@ -12,10 +12,10 @@ const CATEGORIES = ["All", "TMT Bars", "Structural Steel", "MS Pipes & Plates", 
 const PRODUCTS = [
     { id: 1, name: "TMT Fe500D", category: "TMT Bars", grades: "Fe500D, Fe550D, Fe600", mills: "Primary & Secondary", img: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1000&auto=format&fit=crop" },
     { id: 2, name: "MS Angles", category: "Structural Steel", grades: "IS 2062", mills: "SAIL, JSPL, RINL", img: "https://images.unsplash.com/photo-1535813547-99c456a41d4a?q=80&w=1000&auto=format&fit=crop" },
-    { id: 3, name: "MS Plates", category: "MS Pipes & Plates", grades: "IS 2062 E250/E350", mills: "SAIL, Jindal, AMNS", img: "https://images.unsplash.com/photo-1563603417088-e215e98547b7?q=80&w=1000&auto=format&fit=crop" },
+    { id: 3, name: "MS Plates", category: "MS Pipes & Plates", grades: "IS 2062 E250/E350", mills: "SAIL, Jindal, AMNS", img: "https://images.unsplash.com/photo-1535813547-99c456a41d4a?q=80&w=1000&auto=format&fit=crop" },
     { id: 4, name: "Cement 53G", category: "Cement", grades: "OPC 53, PPC", mills: "Ultratech, Ambuja, Shree", img: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=1000&auto=format&fit=crop" },
     { id: 5, name: "MS Channels", category: "Structural Steel", grades: "IS 2062", mills: "SAIL, JSPL, RINL", img: "https://images.unsplash.com/photo-1502472584811-0a2f2feb8968?q=80&w=1000&auto=format&fit=crop" },
-    { id: 6, name: "Wire Rods", category: "TMT Bars", grades: "IS 7887", mills: "JSW, Tata, RINL", img: "https://images.unsplash.com/photo-1504307651254-35680f356f12?q=80&w=1000&auto=format&fit=crop" }
+    { id: 6, name: "Wire Rods", category: "TMT Bars", grades: "IS 7887", mills: "JSW, Tata, RINL", img: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1000&auto=format&fit=crop" }
 ];
 
 export function ProductsGrid() {
@@ -27,7 +27,7 @@ export function ProductsGrid() {
 
     return (
         <section id="products" className="py-24 md:py-32 relative bg-background overflow-hidden min-h-screen">
-            <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[150px] mix-blend-screen opacity-50 pointer-events-none"></div>
+            <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[150px] opacity-50 pointer-events-none transform-gpu"></div>
 
             <div className="container mx-auto px-4 md:px-6 lg:px-8">
 
@@ -57,8 +57,8 @@ export function ProductsGrid() {
                                 key={cat}
                                 onClick={() => setActiveCategory(cat)}
                                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${activeCategory === cat
-                                        ? "bg-primary text-black shadow-[0_0_15px_rgba(212,175,55,0.4)]"
-                                        : "bg-white/5 text-white/60 hover:bg-white/10 hover:text-white border border-white/5"
+                                    ? "bg-primary text-black shadow-[0_0_15px_rgba(212,175,55,0.4)]"
+                                    : "bg-white/5 text-white/60 hover:bg-white/10 hover:text-white border border-white/5"
                                     }`}
                             >
                                 {cat}
@@ -85,7 +85,7 @@ export function ProductsGrid() {
                                             <img
                                                 src={product.img}
                                                 alt={product.name}
-                                                className="w-full h-full object-cover mix-blend-luminosity group-hover:mix-blend-normal opacity-50 group-hover:opacity-80 transition-all duration-700 group-hover:scale-105"
+                                                className="w-full h-full object-cover grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-80 transition-all duration-700 group-hover:scale-105 transform-gpu"
                                             />
                                             <div className="absolute top-4 right-4 z-20">
                                                 <span className="bg-white/10 backdrop-blur-md border border-white/20 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-lg">
