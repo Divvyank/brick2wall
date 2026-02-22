@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { ArrowRight, Mail, Phone, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { MagneticButton } from "@/components/ui/magnetic-button";
@@ -84,15 +85,27 @@ export function Footer() {
 
                         <div className="flex flex-col gap-4">
                             <h4 className="text-white font-bold tracking-wider text-sm uppercase mb-2">Platform</h4>
-                            {["Products & Categories", "Live Market Prices", "Tender Intelligence", "Project Finance (6-8%)", "Bulk Inquiry"].map(link => (
-                                <a key={link} href="#" className="text-white/50 hover:text-primary transition-colors text-sm">{link}</a>
+                            {[
+                                { name: "Products & Categories", href: "/#products" },
+                                { name: "Live Market Prices", href: "/" },
+                                { name: "Tender Intelligence", href: "/#tenders" },
+                                { name: "Project Finance (6-8%)", href: "/#project-finance" },
+                                { name: "Bulk Inquiry", href: "#" }
+                            ].map(link => (
+                                <Link key={link.name} href={link.href} className="text-white/50 hover:text-primary transition-colors text-sm">{link.name}</Link>
                             ))}
                         </div>
 
                         <div className="flex flex-col gap-4">
                             <h4 className="text-white font-bold tracking-wider text-sm uppercase mb-2">Company</h4>
-                            {["About Us", "Manufacturing Partners", "Careers", "News & Press", "Contact Us"].map(link => (
-                                <a key={link} href="#" className="text-white/50 hover:text-primary transition-colors text-sm">{link}</a>
+                            {[
+                                { name: "About Us", href: "/about" },
+                                { name: "Manufacturing Partners", href: "/#mills" },
+                                { name: "Careers", href: "#" },
+                                { name: "News & Press", href: "#" },
+                                { name: "Contact Us", href: "#" }
+                            ].map(link => (
+                                <Link key={link.name} href={link.href} className="text-white/50 hover:text-primary transition-colors text-sm">{link.name}</Link>
                             ))}
                         </div>
 
