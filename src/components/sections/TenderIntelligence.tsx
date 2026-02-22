@@ -60,7 +60,7 @@ export function TenderIntelligence() {
                     <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true, margin: "-100px" }}
+                        viewport={{ once: true, margin: "-20px" }}
                         transition={{ duration: 0.8 }}
                         className="flex flex-col gap-6 lg:pr-12"
                     >

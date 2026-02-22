@@ -38,7 +38,7 @@ export function Hero() {
     return (
         <section
             ref={container}
-            className="relative h-screen min-h-[800px] w-full flex items-center justify-center overflow-hidden bg-background"
+            className="relative min-h-[100dvh] md:min-h-[800px] w-full flex items-center justify-center overflow-hidden bg-background pt-24 pb-32"
         >
             {/* Background Parallax Layer */}
             <motion.div style={{ y, scale }} className="absolute inset-0 z-0 transform-gpu will-change-transform isolate">
@@ -58,7 +58,7 @@ export function Hero() {
             {/* Main Content */}
             <motion.div
                 style={{ opacity }}
-                className="relative z-10 container mx-auto px-4 flex flex-col items-center justify-center text-center mt-20"
+                className="relative z-10 container mx-auto px-4 flex flex-col items-center justify-center text-center mt-10 md:mt-20"
             >
                 <motion.div
                     variants={textContainer}

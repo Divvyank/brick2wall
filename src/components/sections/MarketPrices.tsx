@@ -42,7 +42,7 @@ export function MarketPrices() {
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true, margin: "-100px" }}
+                        viewport={{ once: true, margin: "-20px" }}
                         transition={{ duration: 0.8 }}
                         className="max-w-2xl"
                     >
@@ -57,7 +57,7 @@ export function MarketPrices() {
                     <motion.div
                         initial={{ opacity: 0, x: 30 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true, margin: "-100px" }}
+                        viewport={{ once: true, margin: "-20px" }}
                         transition={{ duration: 0.8 }}
                     >
                         <MagneticButton>
@@ -73,7 +73,7 @@ export function MarketPrices() {
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true, margin: "-100px" }}
+                    viewport={{ once: true, margin: "-20px" }}
                     className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
                 >
                     {MARKET_DATA.map((item) => (

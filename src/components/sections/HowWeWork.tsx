@@ -83,7 +83,7 @@ export function HowWeWork() {
                                         <motion.div
                                             initial={{ scale: 0 }}
                                             whileInView={{ scale: 1 }}
-                                            viewport={{ once: true, margin: "-100px" }}
+                                            viewport={{ once: true, margin: "-20px" }}
                                             transition={{ delay: 0.2, type: "spring", stiffness: 200, damping: 10 }}
                                         >
                                             <Icon className="size-5 text-primary group-hover:scale-110 transition-transform duration-300" />
@@ -95,7 +95,7 @@ export function HowWeWork() {
                                         <motion.div
                                             initial={{ opacity: 0, x: isEven ? -50 : 50 }}
                                             whileInView={{ opacity: 1, x: 0 }}
-                                            viewport={{ once: true, margin: "-100px" }}
+                                            viewport={{ once: true, margin: "-20px" }}
                                             transition={{ duration: 0.6, ease: "easeOut" }}
                                             className={`w-full pl-16 md:pl-0 md:w-[calc(50%-3rem)] flex ${isEven ? 'md:justify-end' : 'md:justify-start'}`}
                                         >

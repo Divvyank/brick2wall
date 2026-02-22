@@ -42,7 +42,15 @@ export function AnimatedIndiaStatesMap() {
             <div className="absolute inset-0 bg-[#0F0F12] border border-white/5 rounded-[40px] glass-card overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.05)_0%,transparent_70%)] pointer-events-none"></div>
 
-                <svg viewBox="0 0 500 550" preserveAspectRatio="none" className="absolute inset-0 w-full h-full drop-shadow-[0_0_15px_rgba(212,175,55,0.2)]">
+                <motion.svg
+                    viewBox="0 0 500 550"
+                    preserveAspectRatio="none"
+                    className="absolute inset-0 w-full h-full drop-shadow-[0_0_15px_rgba(212,175,55,0.2)]"
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-20px" }}
+                >
                     <defs>
                         <linearGradient id="goldAmberGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                             <stop offset="0%" stopColor="#D4AF37" stopOpacity="0.85" />
@@ -58,12 +66,7 @@ export function AnimatedIndiaStatesMap() {
                     </defs>
 
                     {/* Map States Container */}
-                    <motion.g
-                        variants={containerVariants}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-100px" }}
-                    >
+                    <g>
                         {statesData.states.map((state) => (
                             <g key={state.id} style={{ transformOrigin: "center" }}>
                                 {/* Base Dark Path */}
@@ -87,7 +90,7 @@ export function AnimatedIndiaStatesMap() {
                                 />
                             </g>
                         ))}
-                    </motion.g>
+                    </g>
 
                     {/* Gentle Pulse Animaion overlay layer to make it feel alive */}
                     <motion.g
@@ -106,7 +109,7 @@ export function AnimatedIndiaStatesMap() {
                             />
                         ))}
                     </motion.g>
-                </svg>
+                </motion.svg>
 
                 {/* Cities Pins */}
                 {statesData.pins.map((city, i) => (
@@ -143,6 +146,6 @@ export function AnimatedIndiaStatesMap() {
                     <span className="text-xs font-serif text-white tracking-wide">Order Fulfilled States</span>
                 </motion.div>
             </div>
-        </div>
+        </div >
     );
 }

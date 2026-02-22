@@ -107,7 +107,7 @@ export function ManufacturingCredibility() {
                             </p>
                         </motion.div>
 
-                        <div className="relative pl-6 md:pl-8 border-l border-white/10 space-y-12">
+                        <div className="relative pl-6 md:pl-8 border-l border-white/10 space-y-12 ml-8 lg:ml-0">
                             {TIMELINE.map((item, i) => (
                                 <motion.div
                                     key={i}

@@ -49,7 +49,7 @@ export function DifferentiationMatrix() {
                     className="relative z-10 mx-auto max-w-5xl"
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true, margin: "-100px" }}
+                    viewport={{ once: true, margin: "-20px" }}
                     transition={{ staggerChildren: 0.1 }}
                 >
                     {/* Matrix Header */}
